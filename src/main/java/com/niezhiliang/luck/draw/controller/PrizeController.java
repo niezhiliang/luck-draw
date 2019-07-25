@@ -210,6 +210,7 @@ public class PrizeController {
         }
         //如果该代码执行了说明拿出的奖品数据库余额不足，直接返回幸运奖
         if (!isOk) {
+            luckCode = LuckCodeEnum.GRADE_LUCK.getCode();
             if (prizeCount > 570)
                 log.warn("{}，奖品已经全部发放完毕，直接返回幸运奖",name);
             else
