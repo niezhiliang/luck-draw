@@ -44,9 +44,14 @@ public class PrizeController {
 
     @RequestMapping(value = "test")
     public Long test() {
-        return listTools.initIncreCount(RedisKeyConstant.PRIZE_COUNT);
+        return listTools.initIncreCount("hello_world_test");
     }
 
+
+    /**
+     * 容器初始化的方法
+     * @return
+     */
     @RequestMapping(value = "init")
     public String init() {
 
@@ -152,6 +157,11 @@ public class PrizeController {
     }
 
 
+    /**
+     * 抽奖的开放接口
+     * @param name
+     * @return
+     */
     @RequestMapping(value = "do")
     public ResultVO invoke(String name) {
         //判断该用户是否已经中奖
